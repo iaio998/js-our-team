@@ -3,6 +3,10 @@ body {
   color: #68625b;
   font-family: "Roboto Slab", serif;
 }
+img {
+  width: 100%;
+  display: block;
+}
 #form {
   width: 50%;
   margin: 0 auto;

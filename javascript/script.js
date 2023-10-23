@@ -19,32 +19,32 @@ function myOurTeam() {
     {
       name: "Wayne Barnett",
       position: "Founder & CEO",
-      img: "wayne-barnett-founder-ceo.jpg",
+      img: "../img/wayne-barnett-founder-ceo.jpg",
     },
     {
       name: "Angela Carrol",
       position: "Chief Editor",
-      img: "angela-caroll-chief-editor.jpg",
+      img: "../img/angela-caroll-chief-editor.jpg",
     },
     {
       name: "Walter Gordon",
       position: "Office Manager",
-      img: "walter-gordon-office-manager.jpg",
+      img: "../img/walter-gordon-office-manager.jpg",
     },
     {
       name: "Angela Lopez",
       position: "Social Media Manager",
-      img: "angela-lopez-social-media-manager.jpg",
+      img: "../img/angela-lopez-social-media-manager.jpg",
     },
     {
       name: "Scott Estrada",
       position: "Developer",
-      img: "scott-estrada-developer.jpg",
+      img: "../img/scott-estrada-developer.jpg",
     },
     {
       name: "Barbara Ramos",
       position: "Graphic Designer",
-      img: "barbara-ramos-graphic-designer.jpg",
+      img: "../img/barbara-ramos-graphic-designer.jpg",
     },
   ];
 
@@ -71,7 +71,7 @@ function myOurTeam() {
     col.classList.add("col-4");
     const card = `
         <div class="bg-white text-start p-0 rounded-2">
-            <img class="card-img-top rounded-top-2" src="img/${element.img}" alt="${element.name}">
+            <img class="card-img-top rounded-top-2" src="${element.img}" alt="${element.name}">
                 <div class="card-body text-center py-4">
                     <h4 class="card-title">${element.name}</h4>
                     <p class="card-text">
