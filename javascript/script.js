@@ -54,23 +54,53 @@ function myOurTeam() {
     console.log(teamInfos[i].img);
     myPrinter(teamInfos[i]);
   }
-}
 
-function myPrinter(element) {
-  const rowDom = document.getElementById("cards-space");
-  const col = document.createElement("div");
-  col.classList.add("col-4");
-  const card = `
-      <div class="bg-white text-start p-0 rounded-2">
-          <img class="card-img-top rounded-top-2" src="img/${element.img}" alt="${element.name}">
-              <div class="card-body text-center py-4">
-                  <h4 class="card-title">${element.name}</h4>
-                  <p class="card-text">
-                  ${element.position}
-                  </p>
-              </div>
-      </div>
-      `;
-  col.innerHTML = card;
-  rowDom.append(col);
+  const btnAdd = document.getElementById("start-adding");
+  const form = document.getElementById("form");
+  const btnConfirmAdd = document.getElementById("add-member");
+  btnAdd.addEventListener("click", function () {
+    form.classList.remove("d-none");
+    btnAdd.classList.add("d-none");
+
+    btnConfirmAdd.addEventListener("click", myAddMember);
+  });
+
+  function myPrinter(element) {
+    const rowDom = document.getElementById("cards-space");
+    const col = document.createElement("div");
+    col.classList.add("col-4");
+    const card = `
+        <div class="bg-white text-start p-0 rounded-2">
+            <img class="card-img-top rounded-top-2" src="img/${element.img}" alt="${element.name}">
+                <div class="card-body text-center py-4">
+                    <h4 class="card-title">${element.name}</h4>
+                    <p class="card-text">
+                    ${element.position}
+                    </p>
+                </div>
+        </div>
+        `;
+    col.innerHTML = card;
+    rowDom.append(col);
+  }
+
+  function myAddMember() {
+    const newMember = {
+      name: document.getElementById("name").value,
+      position: document.getElementById("position").value,
+      img: document.getElementById("img").value,
+    };
+    console.log(newMember);
+    teamInfos.push(newMember);
+    myPrinter(newMember);
+    form.classList.add("d-none");
+    btnAdd.classList.remove("d-none");
+    reset();
+  }
+
+  function reset() {
+    document.getElementById("name").value = "";
+    document.getElementById("position").value = "";
+    document.getElementById("img").value = "";
+  }
 }

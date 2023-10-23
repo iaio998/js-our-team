@@ -3,3 +3,13 @@ body {
   color: #68625b;
   font-family: "Roboto Slab", serif;
 }
+#form {
+  width: 50%;
+  margin: 0 auto;
+}
+.btn {
+  transition: 1.5s ease;
+}
+.btn:hover {
+  transform: scale(1.2);
+}
